@@ -5,6 +5,10 @@ type HeaderProps = {
   setCategory: (cat: "phongtro" | "nguyencan" | "dichvu" | "price") => void;
 };
 
+const handleLogin = () => {
+  window.location.href = "https://bcss.quannh.click/partner/login";
+};
+
 const Header: React.FC<HeaderProps> = ({ category, setCategory }) => {
   return (
     <header className="bg-white shadow-sm">
@@ -39,7 +43,13 @@ const Header: React.FC<HeaderProps> = ({ category, setCategory }) => {
             </nav>
           </div>
           <div className="flex items-center gap-3">
-            <button className="px-4 py-1 border rounded text-sm">Đăng nhập</button>
+            <button 
+              className="px-4 py-1 border rounded text-sm" 
+              id="login-button"
+              onClick={handleLogin}
+            >
+              Đăng nhập
+            </button>
             <button className="px-4 py-1 bg-red-500 text-white rounded text-sm">Đăng tin</button>
           </div>
         </div>
